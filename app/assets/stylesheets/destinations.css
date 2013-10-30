@@ -1,0 +1,9 @@
+img {
+  border: 5px solid white;
+}
+
+img {
+  max-height: 375px;
+  max-width: 600px;
+  display: block;
+}

@@ -45,7 +45,7 @@ class AttractionsController < ApplicationController
 
     respond_to do |format|
       if @attraction.save
-        format.html { redirect_to destinations_path, notice: 'Attraction was successfully created.' }
+        format.html { redirect_to destination_attraction_path(params[:destination_id], @attraction), notice: 'Attraction was successfully created.' }
         format.json { render json: @attraction, status: :created, location: @attraction }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class AttractionsController < ApplicationController
 
     respond_to do |format|
       if @attraction.update_attributes(params[:attraction])
-        format.html { redirect_to destinations_path, notice: 'Attraction was successfully updated.' }
+        format.html { redirect_to destination_attraction_path(@attraction.destination_id, @attraction), notice: 'Attraction was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,7 +77,7 @@ class AttractionsController < ApplicationController
     @attraction.destroy
 
     respond_to do |format|
-      format.html { redirect_to destinations_path }
+      format.html { redirect_to destination_attractions_path(@attraction.destination_id) }
       format.json { head :no_content }
     end
   end

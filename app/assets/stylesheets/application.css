@@ -1,4 +1,8 @@
-html {
+/*
+/*= require_self
+/*= require_tree .
+*/
+body {
   background: url("http://www.userlogos.org/files/backgrounds/Mafia_Penguin/Map1280x800.jpg") no-repeat center center fixed;
   background-size: cover;
 }
@@ -17,8 +21,3 @@ html {
   list-style-type: none;
 }
 
-.destination {
-}
-
-.attraction {
-}

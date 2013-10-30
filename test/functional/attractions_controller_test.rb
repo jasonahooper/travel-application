@@ -6,44 +6,44 @@ class AttractionsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, :destination_id => @attraction.destination
     assert_response :success
     assert_not_nil assigns(:attractions)
   end
 
   test "should get new" do
-    get :new
+    get :new, :destination_id => @attraction.destination
     assert_response :success
   end
 
   test "should create attraction" do
     assert_difference('Attraction.count') do
-      post :create, attraction: { destination_id: @attraction.destination_id, latitude: @attraction.latitude, longitude: @attraction.longitude, name: @attraction.name }
+      post :create, :destination_id => @attraction.destination, attraction: { destination_id: @attraction.destination_id, latitude: @attraction.latitude, longitude: @attraction.longitude, name: @attraction.name }
     end
 
-    assert_redirected_to attraction_path(assigns(:attraction))
+    assert_redirected_to destination_attraction_path(@attraction.destination, assigns(:attraction))
   end
 
   test "should show attraction" do
-    get :show, id: @attraction
+    get :show, :destination_id => @attraction.destination, id: @attraction
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @attraction
+    get :edit, :destination_id => @attraction.destination, id: @attraction
     assert_response :success
   end
 
   test "should update attraction" do
-    put :update, id: @attraction, attraction: { destination_id: @attraction.destination_id, latitude: @attraction.latitude, longitude: @attraction.longitude, name: @attraction.name }
-    assert_redirected_to attraction_path(assigns(:attraction))
+    put :update, :destination_id => @attraction.destination, id: @attraction, attraction: { destination_id: @attraction.destination_id, latitude: @attraction.latitude, longitude: @attraction.longitude, name: @attraction.name }
+    assert_redirected_to destination_attraction_path(@attraction.destination, assigns(:attraction))
   end
 
   test "should destroy attraction" do
     assert_difference('Attraction.count', -1) do
-      delete :destroy, id: @attraction
+      delete :destroy, :destination_id => @attraction.destination_id, id: @attraction
     end
 
-    assert_redirected_to attractions_path
+    assert_redirected_to destination_attractions_path(@attraction.destination_id)
   end
 end
