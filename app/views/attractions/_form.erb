@@ -1,0 +1,21 @@
+<!-- <fieldset>
+  <%= f.label :destination %>
+  <%= f.collection_select :destination_id, Destination.all, :id, :name %>
+</fieldset>
+ -->
+ <fieldset>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</fieldset>
+<fieldset>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+</fieldset>
+<fieldset>
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude, :readonly => true %>
+</fieldset>
+<fieldset>
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude, :readonly => true %>
+</fieldset>

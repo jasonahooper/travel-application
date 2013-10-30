@@ -1,0 +1,14 @@
+<div class="attraction attraction-edit">
+
+  <h2>Edit Attraction<h2>
+
+  <%= form_for [:destination, @attraction], url: {action: "update"}, :method => 'PUT' do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= f.submit "Save" %>
+  <% end %>
+  <%= form_for [:destination, @attraction], url: {action: "destroy"}, :method => 'DELETE' do |f| %>
+    <%= f.submit "Delete" %>
+  <% end %>
+  <%#= link_to("Delete Attraction", destination_attraction_path(@attraction.destination, @attraction)) %>
+  <%#= button_to("Delete", destination_attraction_path(@attraction.destination, @attraction), :method => 'DELETE')  %>
+</div>

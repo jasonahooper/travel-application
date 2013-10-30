@@ -1,0 +1,11 @@
+<div class="attraction attraction-index">
+
+  <h2>List of Attractions<h2>
+
+  <% @attractions.each do |a| %>
+
+    <%= render :partial => 'attraction', :locals => { :attraction => a } %>
+
+  <% end %>
+
+</div>

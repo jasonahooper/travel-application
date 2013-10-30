@@ -1,0 +1,9 @@
+<div class="attraction attraction-new">
+
+  <h2>New Attraction<h2>
+
+  <%= form_for [:destination, @attraction] do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= f.submit "Create" %>
+  <% end %>
+</div>

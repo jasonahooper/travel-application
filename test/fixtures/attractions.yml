@@ -4,10 +4,10 @@ one:
   name: MyString
   latitude: 1.5
   longitude: 1.5
-  destination_id: 1
+  destination_id: 298486374
 
 two:
   name: MyString
   latitude: 1.5
   longitude: 1.5
-  destination_id: 1
+  destination_id: 298486374

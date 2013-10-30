@@ -1,0 +1,15 @@
+<div class="destination destination-index">
+
+  <h2>All Destinations<h2>
+
+  <p>
+    Go anywhere in the world you have ever wished to go without leaving your seat!
+  </p>
+
+  <ul>
+    <% @destinations.each do |d| %>
+      <li><%= render :partial => 'destination', :locals => { :destination => d } %></li>
+    <% end %>
+    <li><%= link_to "Add a new Destination", :new_destination%></li>
+  </ul>
+</div>

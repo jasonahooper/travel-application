@@ -2,7 +2,7 @@ class AttractionsController < ApplicationController
   # GET /attractions
   # GET /attractions.json
   def index
-    @attractions = Attraction.all
+    @attractions = Destination.find(params[:destination_id]).attractions
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,10 +41,11 @@ class AttractionsController < ApplicationController
   # POST /attractions.json
   def create
     @attraction = Attraction.new(params[:attraction])
+    @attraction.destination_id = params[:destination_id]
 
     respond_to do |format|
       if @attraction.save
-        format.html { redirect_to @attraction, notice: 'Attraction was successfully created.' }
+        format.html { redirect_to destinations_path, notice: 'Attraction was successfully created.' }
         format.json { render json: @attraction, status: :created, location: @attraction }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class AttractionsController < ApplicationController
 
     respond_to do |format|
       if @attraction.update_attributes(params[:attraction])
-        format.html { redirect_to @attraction, notice: 'Attraction was successfully updated.' }
+        format.html { redirect_to destinations_path, notice: 'Attraction was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +77,7 @@ class AttractionsController < ApplicationController
     @attraction.destroy
 
     respond_to do |format|
-      format.html { redirect_to attractions_url }
+      format.html { redirect_to destinations_path }
       format.json { head :no_content }
     end
   end

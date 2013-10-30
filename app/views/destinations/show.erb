@@ -1,0 +1,7 @@
+<div class="destination destination-show">
+  <h2>Destination<h2>
+
+  <%= link_to("All Destinations", destinations_path) %>
+  <%= render :partial => 'destination', :locals => { :destination => @destination } %>
+
+</div>

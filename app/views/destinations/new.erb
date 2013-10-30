@@ -1,0 +1,10 @@
+<div class="destination destination-new">
+
+  <h2>New Destination Page<h2>
+
+  <%= form_for @destination, url: {action: "create"} do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>

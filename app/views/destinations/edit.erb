@@ -1,0 +1,13 @@
+<div class="destination destination-edit">
+
+  <h2>Destination Edit Page<h2>
+
+  <%= form_for @destination, url: {action: "update"}, :method => "PUT" do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= f.submit "Save" %>
+  <% end %>
+  <%= form_for @destination, url: {action: "destroy"}, :method => 'DELETE' do |f| %>
+    <%= f.submit "Delete" %>
+  <% end %>
+
+</div>

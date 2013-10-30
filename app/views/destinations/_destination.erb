@@ -1,0 +1,13 @@
+<div class="destination desination-name">
+  <h3><%= link_to(destination.name, destination_path(destination)) %></h3>
+</div>
+<div class=" destination destination-image">
+  <%= link_to(image_tag(destination.image_url), edit_destination_path(destination)) %>
+</div>
+<h4>Attractions:</h4>
+<ul>
+  <% destination.attractions.each do |a| %>
+    <li><%= render :partial => 'attractions/attraction', :locals => { :attraction => a } %></li>
+  <% end %>
+  <li><%= link_to("Add a new Attraction", new_destination_attraction_path(destination))%></li>
+</ul>

@@ -5,10 +5,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Bitter", :media => "all" %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="main">
+  <h1>The Virtual Traveller</h1>
+  <%= yield %>
+</div>
 </body>
 </html>
