@@ -1,5 +1,5 @@
 <div class="attraction attraction-name">
-  <%= attraction.name %>
+  <%= link_to(attraction.name, destination_attraction_path(attraction.destination, attraction)) %>
 </div>
 <div class="attraction attraction-image imageclass">
   <%= link_to(image_tag(attraction.image_url), edit_destination_attraction_path(attraction.destination, attraction)) %>

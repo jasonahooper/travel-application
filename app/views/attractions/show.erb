@@ -2,5 +2,8 @@
 
   <h2>Show Attraction<h2>
 
+  <%= link_to("All Attractions",destination_attractions_path(@attraction.destination)) %>
+
   <%= render :partial => 'attraction', :locals => { :attraction => @attraction } %>
+  <%= link_to 'Map', "http://maps.google.com/?q=#{@attraction.latitude},#{@attraction.longitude}" %>
 </div>
